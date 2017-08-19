@@ -9,7 +9,7 @@ $(document).ready(function() {
 		var minWid = $("#imgWidth").val();
 		var minHei = $("#imgHeight").val();
 		var total = 0;
-		$.getJSON("http://www.reddit.com/r/"+sub+"/"+sort+"/.json?jsonp=&limit="+count+"&count="+count, function(data) { 
+		$.getJSON("https://www.reddit.com/r/"+sub+"/"+sort+"/.json?jsonp=&limit="+count+"&count="+count, function(data) { 
 			$.each(data.data.children, function(i,item){
 				if ((hasnsfw==false && item.data.over_18!=true) || hasnsfw==true) {
 					var linkpreview = item.data.preview;

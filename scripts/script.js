@@ -14,14 +14,16 @@ $(document).ready(function() {
 				if ((hasnsfw==false && item.data.over_18!=true) || hasnsfw==true) {
 					var linkpreview = item.data.preview;
 					var prevSource = "";
+					var prevSourceURL = "";
 					var imgLink = "";
 					var imgCont = $("<div>").attr("class", "imgCont");
 					var image = $("<img>").attr("class", "imageResult");
 					var showImg = true;
 					if (linkpreview) {
 						prevSource = linkpreview.images[0].source;
-						imgLink = $("<a>").attr("href", prevSource.url);
-						image.attr("src", prevSource.url);
+						prevSourceURL = decodeURI(prevSource.url);
+						imgLink = $("<a>").attr("href", prevSourceURL);
+						image.attr("src", prevSourceURL);
 						if (prevSource.width >= minWid && prevSource.height >= minHei) {
 							imgLink = imgLink.attr("download",true);
 						} else {

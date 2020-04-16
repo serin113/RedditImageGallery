@@ -22,7 +22,9 @@ $(document).ready(function() {
 					if (linkpreview) {
 						prevSource = linkpreview.images[0].source;
 						prevSourceURL = prevSource.url;
-						prevSourceURL = prevSourceURL.replace( /\&amp;/g, '&' );
+						console.log(prevSourceURL);
+						prevSourceURL = prevSourceURL.replace(/\&amp;/g, '&');
+						console.log(prevSourceURL);
 						imgLink = $("<a>").attr("href", prevSourceURL);
 						image.attr("src", prevSourceURL);
 						if (prevSource.width >= minWid && prevSource.height >= minHei) {

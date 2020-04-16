@@ -21,7 +21,8 @@ $(document).ready(function() {
 					var showImg = true;
 					if (linkpreview) {
 						prevSource = linkpreview.images[0].source;
-						prevSourceURL = $.parseHTML(prevSource.url);
+						prevSourceURL = prevSource.url;
+						prevSourceURL = prevSourceURL.replace( /\&amp;/g, '&' );
 						imgLink = $("<a>").attr("href", prevSourceURL);
 						image.attr("src", prevSourceURL);
 						if (prevSource.width >= minWid && prevSource.height >= minHei) {
